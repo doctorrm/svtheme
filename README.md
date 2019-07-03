@@ -2,9 +2,21 @@
 
 目前的主题是基于WordPress自带的twentyseventeen来改的，因为该主题的文件不多，比较方便改。界面上参考了孟坤博客和Typecho 主题 Pinghsu。
 
+
+功能比较丰富：包括头部响应隐藏，统计浏览量，留言，随机笑话，等等。功能再进一步完善中。
+
+
 ![](assets/images/svtheme.png)
 
+
+
+
+
 ![](assets/images/svtheme1.png)
+
+
+
+
 
 ![](assets/images/svtheme2.png)
 
@@ -12,4 +24,4 @@
 1、对移动端体验不好；
 2、样式代码较为杂乱。
 
-后面可能会对上述问题进行修复。可供学习，慎用。
+后面可能会对上述问题进行修复。本主题现阶段建议用于学习。
