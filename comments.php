@@ -31,6 +31,7 @@ if ( post_password_required() ) {
 						'avatar_size' => 30,
 						'style'       => 'ol',
 						'short_ping'  => true,
+						'order' 	  => 'ASC',
 						'reply_text'  => twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
 					) );
 				?>

@@ -9,34 +9,6 @@
  * @since 1.0
  */
 
-
-
-// 文章阅读次数
-function getPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if ($count == '') {
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0";
-    }
-    return $count;
-}
-function setPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if ($count == '') {
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    } else {
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-
-
-
 /**
  * Twenty Seventeen only works in WordPress 4.7 or later.
  */
@@ -45,8 +17,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
-//不刷新提交评论
-require('ajax-comment/main.php');
 
 //wordpress首页排除某些指定分类文章的显示 
 function exclude_category_home( $query ) {  

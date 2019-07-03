@@ -1326,7 +1326,7 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 
 	$comment_args = array(
 		'orderby' => 'comment_date_gmt',
-		'order' => 'DESC',
+		'order' => 'ASC',
 		'status'  => 'approve',
 		'post_id' => $post->ID,
 		'no_found_rows' => false,
@@ -2219,7 +2219,7 @@ function comment_form( $args = array(), $post_id = null ) {
 	$fields = apply_filters( 'comment_form_default_fields', $fields );
 	$defaults = array(
 		'fields'               => $fields,
-		'comment_field'        => '<div class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="4" font-size="1em" maxlength="65525" aria-required="true" required="required" placeholder="镜花水月zzZ"></textarea></div>',
+		'comment_field'        => '<div class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="4" font-size="1em" maxlength="65525" aria-required="true" required="required"></textarea></div>',
 		/** This filter is documented in wp-includes/link-template.php */
 		'must_log_in'          => '<p class="must-log-in">' . sprintf(
 		                              /* translators: %s: login URL */

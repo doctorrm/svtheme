@@ -7,6 +7,17 @@
  * 滋滋滋~
  */
 
+
+// 使得同一用户刷新页面时浏览量不+1
+$post_id=get_the_ID();
+if(isset($_COOKIE['views'.$post_id.COOKIEHASH]) && $_COOKIE['views'.$post_id.COOKIEHASH] == '1'){       
+}else{    
+    setPostViews($post_id);
+    setcookie('views'.$post_id.COOKIEHASH,'1',time() + 3600,COOKIEPATH,COOKIE_DOMAIN);//设置时间间隔
+}
+
+
+
 get_header(); ?>
 <div class="wrap">
 	<div id="primary" class="content-area">

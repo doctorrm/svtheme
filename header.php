@@ -4,8 +4,20 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="stylesheet" type="text/css" href="https://blog.harbournet.cn/style.min.css">
+	<link rel="stylesheet" type="text/css" href="https://blog.harbournet.cn/wp-content/themes/svtheme/assets/css/style.min.css">
+	<link rel="stylesheet" type="text/css" href="https://blog.harbournet.cn/wp-content/themes/svtheme/assets/css/font-awesome.min.css">
 	<?php wp_head(); ?>
+
+
+	<!-- 评论框随机文字 -->
+	</script>
+	<script>
+		  $.getJSON("https://api.yum6.cn/yan.php?format=json",function(data){ 
+		  		$("#comment").attr({
+		  			"placeholder":data.text
+		  		});
+		  });
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -13,7 +25,7 @@
 <div id="page" class="site">
 	<header id="header" class="header bg-white">		
 	 	<div class="navbar-container2">
-	        <a href="<?php bloginfo('url');?>" class="navbar-logo" >
+	        <a href="<?php bloginfo('url');?>" class="navbar-logo" style="color:#eb5055">
 	    		<?php bloginfo('name');?>
 	        </a>
 

@@ -14,6 +14,55 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/*回到顶部按钮样式*/
+.scrollup-button{
+   box-shadow: 0 0 25px 0 rgba(0,0,0,0.31);
+   opacity: 0.7;
+}
+
+
+/*代码样式*/
+pre code{
+	font-size: 16px; 
+	padding:0em;
+	display: unset;
+}
+
+/*鼠标下滑隐藏菜单栏*/
+.slideUp {
+	  -webkit-transform: translateY(-100px);
+	  -ms-transform: translateY(-100px);
+	  -o-transform: translateY(-100px);
+	  transform: translateY(-100px);
+	  -webkit-transition: transform .5s ease-out;
+	  -o-transition: transform .5s ease-out;
+	  transition: transform .5s ease-out;
+}
+
+.slideDown {
+	  -webkit-transform: translateY(0);
+	  -ms-transform: translateY(0);
+	  -o-transform: translateY(0);
+	  transform: translateY(0);
+	  -webkit-transition: transform .5s ease-out;
+	  -o-transition: transform .5s ease-out;
+	  transition: transform .5s ease-out;
+}
+
+.header{
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	  height: 60px;
+	  line-height: 60px;
+	  background-color: #333;
+	  text-align: center;
+	  box-shadow: 0 0 5px 0 rgba(0,0,0,0.43);
+	  z-index: 9999;
+	  background-color: rgba(255,255,255,.95) !important;
+}
+
+
 
 /**
  * 滚动条样式，参考：https://codepen.io/GhostRider/pen/GHaFw
@@ -49,6 +98,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /*---滚动框背景样式--*/  
 ::-webkit-scrollbar-track-piece{  
    background-color:#f5f5d5; /*滚动框背景颜色*/
+}
+
+
+div#google_translate_element{
+	float:left;
 }
 
 /*--------------------------------------------------------------
@@ -110,6 +164,17 @@ nav,
 section {
 	display: block;
 }
+
+
+article p a{
+	color:#dc4a4a;
+} 
+
+article p a:hover,
+a:active{
+	color:red;
+} 
+
 
 h1 {
 	font-size: 2em;
@@ -447,6 +512,18 @@ template {
 	clear: both;
 }
 
+/*正文图片效果*/
+.entry-content img{
+     box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+     -moz-box-shadow: 0 0 10px rgba(0,0,0,10);
+     margin: 2px 0;
+     padding: 2px;
+     background: #e0dfcc;
+     border: 1px solid #e0dfcc;
+     border-radius:10px
+}
+
 /*--------------------------------------------------------------
 5.0 Typography
 --------------------------------------------------------------*/
@@ -563,7 +640,7 @@ address {
 	margin: 0 0 1.5em;
 }
 
-pre {
+/* pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
@@ -573,7 +650,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-}
+} */
 
 code,
 kbd,
@@ -949,7 +1026,7 @@ html[lang="he-IL"] *,
 html[lang="ja"] *,
 html[lang="ko-KR"] *,
 html[lang="th"] * {
-	letter-spacing: 0 !important;
+	/* letter-spacing: 0 !important; */
 }
 
 /*--------------------------------------------------------------
@@ -1054,7 +1131,7 @@ input[type="checkbox"] + label {
 button,
 input[type="button"],
 input[type="submit"] {
-	background-color: #222;
+	background-color: rgba(0,0,0,0);
 	border: 0;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -1065,9 +1142,9 @@ input[type="submit"] {
 	display: inline-block;
 	font-size: 14px;
 	font-size: 0.875rem;
-	font-weight: 800;
+	/* font-weight: 800; */
 	line-height: 1;
-	padding: 1em 2em;
+	padding: 0.1em 0.1em;
 	text-shadow: none;
 	-webkit-transition: background 0.2s;
 	transition: background 0.2s;
@@ -1094,7 +1171,7 @@ input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-	background: #767676;
+	background: rgba(184,197,214,.2);
 }
 
 button.secondary:hover,
@@ -1221,7 +1298,7 @@ td:last-child {
 }
 
 /*--------------------------------------------------------------
-10.0 Links
+10.0 Links 链接相关
 --------------------------------------------------------------*/
 
 a {
@@ -1235,7 +1312,7 @@ a:focus {
 
 a:hover,
 a:active {
-	color: #000;
+	color: #222;
 	outline: 0;
 }
 
@@ -1356,25 +1433,31 @@ a:hover .nav-title,
 --------------------------------------------------------------*/
 
 .post-thumbnail {
-	margin-bottom: 1em;
-}
+	margin-bottom: 0.5em;
+	width:258px;
+	height:175px;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.9);
+=}
 
 .post-thumbnail a img {
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 	width:258px;
-	height:160px;
+	height:175px;
 }
 
 .post-thumbnail a:hover img,
 .post-thumbnail a:focus img {
-	opacity: 0.7;
+	transform: scale(1.2); 
+	transition: all 0.6s;	
+	opacity: 0.7; 
 }
 
 .post_item_card{
 	float: left;
-	margin-bottom: 1em;
+	margin-bottom: 1.7em;
 	margin-right: 2.5em;
 	width:258px;
 	height:282px;
@@ -1386,8 +1469,11 @@ a:hover .nav-title,
 	background-color:rgba(255,255,255,0.73);
 }
 
-.post_item_card:hover {
-	opacity: 0.7
+/*移动到卡片就会触发图片放大，记住这个技巧！*/
+.post_item_card:hover .post-thumbnail a img{
+	transform: scale(1.2); 
+	transition: all 0.6s;	
+	opacity: 0.7; 
 }
 
 /*--------------------------------------------------------------
@@ -1480,7 +1566,6 @@ a:hover .nav-title,
 }
 
 .main-navigation a {
-	
 	padding: 0.5em 0;
 	text-decoration: none;
 }
@@ -1954,7 +2039,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 .site-content {
-	padding: 2.5em 0 0;
+	/* padding: 2.5em 0 0; */
 }
 
 /*--------------------------------------------------------------
@@ -2121,7 +2206,10 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 
 /*文章的边距*/
 .blog .site-main >article, main{
-	margin:0.4in;
+	margin-left:0.4in;
+	margin-right: 0.4in;
+	margin-top:0em;
+	margin-bottom: 0em;
 }
 
 body:not(.twentyseventeen-front-page) .entry-header {
@@ -2594,7 +2682,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .widget {
-	padding-bottom: 3em;
+	padding-bottom: 0.5em;
 }
 
 h2.widget-title {
@@ -3331,7 +3419,7 @@ p > object:only-child {
 
 	h6 {
 		font-size: 16px;
-		font-size: 1rem;
+		/* font-size: 1rem; */
 	}
 
 	.entry-content blockquote.alignleft,
@@ -3430,7 +3518,7 @@ p > object:only-child {
 	select,
 	textarea {
 		font-size: 16px;
-		font-size: 1rem;
+	/* 	font-size: 1rem; */
 		line-height: 1.5;
 	}
 
@@ -3583,6 +3671,11 @@ p > object:only-child {
 	.js .dropdown-toggle {
 		display: none;
 	}
+	
+	/*菜单到右侧的距离*/
+	.main-navigation{
+		padding-right: 2.9em;
+	}
 
 	.main-navigation {
 		width: auto;
@@ -3615,7 +3708,7 @@ p > object:only-child {
 	}
 
 	.main-navigation a {
-		padding: 0 0.9em;
+		padding: 0 0.5em;
 	}
 
 	.main-navigation ul ul {
@@ -3876,7 +3969,8 @@ p > object:only-child {
 	/* Posts */
 
 	.site-content {
-		padding: 5.5em 0 0;
+		padding: 3em;
+		margin-top:3em;
 	}
 
 	.single-post .entry-title,
