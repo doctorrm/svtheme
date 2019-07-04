@@ -12,33 +12,42 @@
  * @version 1.2
  */
 
-?>	
-		<script type="text/javascript">
-			//鼠标下滑隐藏菜单栏
-			var new_scroll_position = 0;
-			var last_scroll_position;
-			var header = document.getElementById("header");
+?>
 
-			window.addEventListener('scroll', function(e) {
-			  last_scroll_position = window.scrollY;
+ 
 
-			  // Scrolling down
-			  if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
-				// header.removeClass('slideDown').addClass('slideUp');
-				header.classList.remove("slideDown");
-				header.classList.add("slideUp");
+ <!-- 表情包 -->	
+<script src="wp-content/themes/twentyseventeen/jQuery-emoji-master/lib/script/jquery.min.js"></script>
+<script src="wp-content/themes/twentyseventeen/jQuery-emoji-master/lib/script/highlight.pack.js"></script>
+<script src="wp-content/themes/twentyseventeen/jQuery-emoji-master/dist/js/jquery.emoji.min.js"></script>
+<script src="wp-content/themes/twentyseventeen/jQuery-emoji-master/dist/js/emoji.list.js"></script>
+ <!-- 表情包 -->	
 
-			  // Scrolling up
-			  } else if (new_scroll_position > last_scroll_position) {
-				// header.removeClass('slideUp').addClass('slideDown');
-				header.classList.remove("slideUp");
-				header.classList.add("slideDown");
-			  }
+<script type="text/javascript">
+	
+	var new_scroll_position = 0;
+	var last_scroll_position;
+	var header = document.getElementById("header");
 
-			  new_scroll_position = last_scroll_position;
-			});
-		</script>
+	window.addEventListener('scroll', function(e) {
+	  last_scroll_position = window.scrollY;
 
+	  // Scrolling down
+	  if (new_scroll_position < last_scroll_position && last_scroll_position > 80) {
+		// header.removeClass('slideDown').addClass('slideUp');
+		header.classList.remove("slideDown");
+		header.classList.add("slideUp");
+
+	  // Scrolling up
+	  } else if (new_scroll_position > last_scroll_position) {
+		// header.removeClass('slideUp').addClass('slideDown');
+		header.classList.remove("slideUp");
+		header.classList.add("slideDown");
+	  }
+
+	  new_scroll_position = last_scroll_position;
+	});
+</script>
 
 		</div><!-- #content -->
 
@@ -65,6 +74,7 @@
 				?>
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
+
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
